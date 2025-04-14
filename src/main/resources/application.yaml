@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: Case-app
+
+logging:
+  level:
+    fr.inventivit.caseapp: TRACE # this should be set to DEBUG in production
