@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 
 import java.util.Optional;
 
@@ -38,7 +39,15 @@ public class CaseService implements CaseQueryUseCase, CaseMutationUseCase {
             log.info("Case with ID {} not found, abort", caseToUpdate.id());
             return null;
         }
-        Case updatedCase = caseRepository.updateCase(caseToUpdate);
+
+        if (StringUtils.hasText(caseToUpdate.title())) {
+            existingCase = existingCase.withTitle(caseToUpdate.title());
+        }
+        if (StringUtils.hasText(caseToUpdate.description())) {
+            existingCase = existingCase.withDescription(caseToUpdate.description());
+        }
+
+        Case updatedCase = caseRepository.updateCase(existingCase);
         log.info("Case with ID {} updated", caseToUpdate.id());
         return updatedCase;
     }

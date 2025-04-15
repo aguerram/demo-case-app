@@ -53,6 +53,10 @@ class CasesController {
         log.debug("Handle mapping to update case id {} with new values {}", caseId, updateCaseRequest);
         Case caseModel = caseMapper.updateCaseRequestToModel(updateCaseRequest);
         Case updateCase = caseMutationUseCase.updateCase(caseModel.withId(caseId));
+        if (updateCase == null) {
+            log.debug("Case with id {} not found", caseId);
+            throw new CaseNotFoundException(caseId);
+        }
         log.debug("Case {} updated with new values {}", caseId, updateCase);
         return caseMapper.toCaseDTO(updateCase);
     }
