@@ -1,6 +1,13 @@
 spring:
   application:
     name: Case-app
+  flyway:
+    driver-class-name: org.h2.Driver
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
 
 logging:
   level:
