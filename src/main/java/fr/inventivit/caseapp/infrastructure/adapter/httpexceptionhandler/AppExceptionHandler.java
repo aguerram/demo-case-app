@@ -1,5 +1,6 @@
-package fr.inventivit.caseapp.infrastructure.adapter.rest.httpexceptionhandler;
+package fr.inventivit.caseapp.infrastructure.adapter.httpexceptionhandler;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestControllerAdvice
+@Hidden // to resolve java.lang.NoSuchMethodError: 'void org.springframework.web.method.ControllerAdviceBean.<init>
 public class AppExceptionHandler {
 
     @ExceptionHandler(ResponseStatusException.class)
