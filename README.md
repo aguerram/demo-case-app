@@ -1,6 +1,6 @@
 # Case Application Demo
 
-This is a simple Spring Boot application that demonstrates a clean architecture implementation for managing cases. The application follows hexagonal architecture principles and provides a RESTful API for CRUD operations on cases.
+This is a simple Spring Boot application that demonstrates a clean architecture implementation for managing cases. The application follows hexagonal architecture principles and Test-Driven Development (TDD) practices to provide a RESTful API for CRUD operations on cases.
 
 ## Technologies Used
 
