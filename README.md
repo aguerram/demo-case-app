@@ -147,6 +147,18 @@ Example error response:
 }
 ```
 
+## Development Approach
+
+This project follows Test-Driven Development (TDD) principles, where tests are written before the actual implementation code. This approach ensures:
+
+- High test coverage
+- Clear requirements and acceptance criteria
+- Code that meets intended functionality
+- Maintainable and modular design
+- Confidence in refactoring
+
+Tests can be found in the `src/test` directory corresponding to their implementation counterparts.
+
 ## Testing the Application
 
 ### Swagger UI
